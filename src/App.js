@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Buscador from "./Components/Buscador";
+import Header from "./Components/Header";
+import Main from "./Components/Main";
+import React, {useState} from "react";
 
 function App() {
+  const [busqueda, setBusqueda] = useState('');
+
   return (
+    <>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Buscador setBusqueda={setBusqueda}/>
+      <Header  />
+      <div className="container-fluid main-container">
+      <Main busqueda={busqueda} />
+
+
+      </div>
+     
     </div>
+    </>
   );
 }
 
